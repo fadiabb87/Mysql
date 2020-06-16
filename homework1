@@ -1,0 +1,15 @@
+1.the second oldest user:
+SELECT id FROM testsql.users ORDER BY date_of_birth ASC;
+
+2.education users:
+SELECT id, email FROM testsql.users WHERE email LIKE '%edu';
+
+3.Names of users born in 2000:
+SELECT first_name FROM testsql.users WHERE date_of_birth = '2000';
+
+4.AVR of birth year:
+SELECT ROUND(AVG(date_of_birth)) FROM testsql.users  WHERE phone LIKE '050%';
+
+5.the 3 years with the biggest number of birth:
+SELECT date_of_birth FROM testsql.users GROUP BY date_of_birth ORDER BY Count(id) DESC LIMIT 3;
+
